@@ -1,0 +1,32 @@
+body {
+    background-color: lightblue;
+    color: maroon;
+    font-family: Arial;
+    margin: 0px;
+}
+
+main {
+    background-color: aqua;
+    color:brown;
+    font-family: 'Franklin Gothic Medium';
+    margin: 0px;
+}
+
+header {
+    background-color: greenyellow;
+    color: lawngreen;
+    font-family: Verdana;
+    margin: 0px;
+}
+
+footer {
+    background-color: darkblue;
+    color: darkseagreen;
+    font-family: 'Times New Roman';
+    margin: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
