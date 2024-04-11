@@ -28,6 +28,31 @@ footer {
 
 a {
     text-decoration: none;
+    color: green;
+}
+
+a:link {
+    text-decoration: none;
+    color:blue;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+a:visited {
+    text-decoration: none;
+    color:crimson;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: red;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: cadetblue;
+}
+
+a:active {
+    opacity: 0.3;
+    color: black;
 }
 
 .citation {
