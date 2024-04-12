@@ -29,6 +29,7 @@ footer {
 a {
     text-decoration: none;
     color: green;
+    transition: 1s 2s;
 }
 
 a:link {
@@ -48,6 +49,7 @@ a:hover {
     color: red;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: cadetblue;
+    transition: 0.3s;
 }
 
 a:active {
