@@ -10,6 +10,7 @@ main {
     color:black;
     font-family: 'Franklin Gothic Medium';
     margin: 0px;
+    text-align: center;
 }
 
 header {
@@ -55,6 +56,20 @@ a:hover {
 a:active {
     opacity: 0.3;
     color: black;
+}
+
+div.menu {
+    border: 7px solid #00880080;
+    border-radius: 5px;
+    width: 300px;
+    margin: 0 auto;
+    color:azure;
+    background:#002;
+}
+
+div.menu:hover {
+    background-color: #ffffff30;
+    box-shadow: 0 0 15px #00000030;
 }
 
 .citation {
