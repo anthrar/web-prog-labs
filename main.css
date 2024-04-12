@@ -9,13 +9,13 @@ main {
     background-color: aqua;
     color:black;
     font-family: 'Franklin Gothic Medium';
-    margin: 0px;
+    margin: 10px 20px 18px;
     text-align: center;
 }
 
 header {
     background-color: greenyellow;
-    color: lawngreen;
+    color:cornflowerblue;
     font-family: Verdana;
     margin: 0px;
 }
@@ -25,6 +25,11 @@ footer {
     color: darkseagreen;
     font-family: 'Times New Roman';
     margin: 0px;
+    text-align: right;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 
 a {
