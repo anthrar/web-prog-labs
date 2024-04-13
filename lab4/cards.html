@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Красов Павел. Карточки</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon-16X16.png">
+    <link rel="shortcut icon" href="favicon-32x32.png">
+    <style>
+        .weapon {
+            border:  1px solid;
+            width: 300px;
+            display: inline-block;
+            color:darkslategray;
+        }
+        .img {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            display: block;
+        }
+        .description {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0px;
+            border: 2px solid;
+            text-align: center;
+            position: relative;
+            font-size: 24px;
+        }
+        h1 {
+            font-size: 14px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            box-shadow: 2px 3px 3px;
+            color: darkgray;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 4
+    </header>
+
+    <main>
+        <div class="weapon">
+            <h1>Катана</h1>
+            <img class="img" src="data:image/png;base64,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"
+            <div class="description">
+            Катана - режеще-колющее оружие, представляющее собой изогнутый меч. Традиционное оружие самураев.
+            </div>
+        </div>
+        <div class="weapon">
+            <h1>Копьё</h1>
+            <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9Kf6ZaeTeqQEyUD5P9SDaPm2R1GvBSO03C-XduBUCNg&s"
+            <div class="description">
+            Копьё - колющее оружие, представляющее собой осрый шип на деревянной палке. Чаще всего использовался рядовыми 
+            пехотинцами.
+            </div>
+        </div>
+        <div class="weapon">
+            <h1>Нунчаки</h1>
+            <img class="img" src="https://sportse.ru/upload/cssinliner_webp/iblock/fd7/98fe2ee48a70a120f5b37c0a.webp"
+            <div class="description">
+            Нунчаки - ударно-дробительно оружие, родом из Японии. Излюбленное оружие крестьян прошлого.
+            </div>
+        </div>
+        <div class="weapon">
+            <h1>Моргенштерн</h1>
+            <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv-hI8Lw6YfWQYZDWOkFL9yPu2WuyX_S3ACFbN8I6xOA&s"
+            <div class="description">
+            Моргенштерн - ударно-дробительная булава, позволявшая легко сокрушать тяжелобронированных противников.
+            </div>
+        </div>
+        <div class="weapon">
+            <h1>Тонфы</h1>
+            <img class="img" src="https://dantesport.ru/images/product_images/popup_images/1806_0.jpg"
+            <div class="description">
+            Тонфы - традиционное оружие ударно-раздробляющего действия жителей острова Окинава.
+            </div>
+        </div>
+        <div class="weapon">
+            <h1>Тэссен</h1>
+            <img class="img" src="https://www.aoyama-do.com/samurai/samurai-gear/tessen008/tessen008.jpg"
+            <div class="description">
+            Тэссен - боевой веер, применявшийся в странах древней Азии.
+            </div>
+        </div>
+        <div class="weapon">
+            <h1>Хопеш</h1>
+            <img class="img" src="https://wf.cdn.gmru.net/wiki/images/6/68/Kn200_vikings01.png"
+            <div class="description">
+            Хопеш - одно из древнейший орудий человечества. Состоял из серповидной рубяще-режущей части (полукруглого 
+            клинка) и рукояти. 
+            </div>
+        </div>
+        <div class="weapon">
+            <h1>Чакра</h1>
+            <img class="img" src="https://diletant.media/upload/medialibrary/92b/92b47307658a861b950482e67930e05e.jpg"
+            <div class="description">
+            Чакра - древнее индейское оружие, представляющее собой заострённый метательный диск.
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Красов Павел, ФБИ-23, 2 курс, 2024
+    </footer>
+</body>
+</html>
