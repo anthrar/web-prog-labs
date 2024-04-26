@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Красов Павел. Корзина.</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon-16X16.png">
+    <link rel="shortcut icon" href="favicon-32x32.png">
+    <script>
+        function calculation() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+            let inputC = document.getElementById('numberC');
+            let inputD = document.getElementById('numberD');
+            let inputE = document.getElementById('numberE');
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let c = parseInt(inputC.value);
+            let d = parseInt(inputD.value);
+            let e = parseInt(inputE.value);
+            let result = a*90 + b*80 + c*250 + d*240 + e*120;
+            alert('Общая цена: ' + result);
+          
+        }
+
+        function clean() {
+            document.getElementById('numberA').value='';
+            document.getElementById('numberB').value='';
+            document.getElementById('numberC').value='';
+            document.getElementById('numberD').value='';
+            document.getElementById('numberE').value='';
+            document.getElementById('output').remove();
+        }
+    </script>
+    <style>
+        h1 {
+            position: relative;
+            text-align: center;
+            color:darkmagenta;
+            font-size: 15px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        #output {
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
+        }
+        .basket {
+            border: 1px solid;
+            display: inline-block;
+            border-radius: 2px;
+            background-color:beige;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+
+    <main>
+        <div class="basket">
+            <h1>Корзина товаров</h1>
+            <label>Груши(90р/шт):<input type="number", min="0", value="" placeholder="введите количество груш", id="numberA"></label><br>
+            <label>Бананы(80р/шт):<input type="number",  min="0",value="" placeholder="введите количество бананов", id="numberB"></label><br>
+            <label>Дыни(250р/шт):<input type="number", min="0", value="" placeholder="введите количество дынь", id="numberC"></label><br>
+            <label>Мандарины(240р/шт):<input type="number", min="0", value="" placeholder="введите количество мандарин", id="numberD"></label><br>
+            <label>Апельсины(120р/шт):<input type="number", min="0", value="" placeholder="введите количество апельсинов", id="numberE"></label><br>
+        
+
+            <div>
+                <input type="button" value="Расчитать" onclick="calculation()">
+                <input type="button" value="Очистить" onclick="clean()">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Красов Павел, ФБИ-23, 2 курс, 2024
+    </footer>
+</body>
+</html>
