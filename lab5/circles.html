@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Красов Павел. Круги.</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon-16X16.png">
+    <link rel="shortcut icon" href="favicon-32x32.png">
+    <script>
+        function hideCir1() {
+            let cirOne = document.getElementById('circle1');
+            cirOne.style.scale = '0';
+            cirOne.style.transition = '1s';
+        }
+        function hideCir2() {
+            let cirTwo = document.getElementById('circle2');
+            cirTwo.style.scale = '0';
+            cirTwo.style.transition = '1s';
+        }
+        function hideCir3() {
+            let cirThree = document.getElementById('circle3');
+            cirThree.style.scale = '0';
+            cirThree.style.transition = '1s';
+        }
+        function hideCir4() {
+            let cirFour = document.getElementById('circle4');
+            cirFour.style.scale = '0';
+            cirFour.style.transition = '1s';
+        }
+        function hideCir5() {
+            let cirFive = document.getElementById('circle5');
+            cirFive.style.scale = '0';
+            cirFive.style.transition = '1s';
+        }
+        function hideCir6() {
+            let cirSix = document.getElementById('circle6');
+            cirSix.style.scale = '0';
+            cirSix.style.transition = '1s';
+        }
+        function hideCir7() {
+            let cirSeven = document.getElementById('circle7');
+            cirSeven.style.scale = '0';
+            cirSeven.style.transition = '1s';
+        }
+        function hideCir8() {
+            let cirEight = document.getElementById('circle8');
+            cirEight.style.scale = '0';
+            cirEight.style.transition = '1s';
+        }
+        function hideCir9() {
+            let cirNine = document.getElementById('circle9');
+            cirNine.style.scale = '0';
+            cirNine.style.transition = '1s';
+        }
+        function hideCir10() {
+            let cirTen = document.getElementById('circle10');
+            cirTen.style.scale = '0';
+            cirTen.style.transition = '1s';
+        }
+        function findCircle() {
+            let cirOne = document.getElementById('circle1');
+            cirOne.style.scale = '1';
+            cirOne.style.transition = '1s';
+            let cirTwo = document.getElementById('circle2');
+            cirTwo.style.scale = '1';
+            cirTwo.style.transition = '1s';
+            let cirThree = document.getElementById('circle3');
+            cirThree.style.scale = '1';
+            cirThree.style.transition = '1s';
+            let cirFour = document.getElementById('circle4');
+            cirFour.style.scale = '1';
+            cirFour.style.transition = '1s';
+            let cirFive = document.getElementById('circle5');
+            cirFive.style.scale = '1';
+            cirFive.style.transition = '1s';
+            let cirSix = document.getElementById('circle6');
+            cirSix.style.scale = '1';
+            cirSix.style.transition = '1s';
+            let cirSeven = document.getElementById('circle7');
+            cirSeven.style.scale = '1';
+            cirSeven.style.transition = '1s';
+            let cirEight = document.getElementById('circle8');
+            cirEight.style.scale = '1';
+            cirEight.style.transition = '1s';
+            let cirNine = document.getElementById('circle9');
+            cirNine.style.scale = '1';
+            cirNine.style.transition = '1s';
+            let cirTen = document.getElementById('circle10');
+            cirTen.style.scale = '1';
+            cirTen.style.transition = '1s';
+        }
+    </script>
+    <style>
+        .c1 {
+            top: 100px;
+            left: 220px;
+            background-color: beige;
+            position: relative;
+        }
+        .c2 {
+            top: 10px;
+            left: 20px;
+            background-color:coral;
+            position: relative;
+        }
+        .c3 {
+            top: 300px;
+            right: 10px;
+            background-color:chocolate;
+            position: relative;
+        }
+        .c4 {
+            top: -60px;
+            left: 300px;
+            background-color:darkgray;
+            position: relative;
+        }
+        .c5 {
+            top: -230px;
+            left: 1000px;
+            background-color: rgb(245, 230, 220);
+            position: relative;
+        }
+        .c6 {
+            top: 300px;
+            right: 10px;
+            background-color:brown;
+            position: relative;
+        }
+        .c7 {
+            top: -540px;
+            left: 200px;
+            background-color:darksalmon;
+            position: relative;
+        }
+        .c8 {
+            top: 76px;
+            left: 200px;
+            background-color:antiquewhite;
+            position: relative;
+        }
+        .c9 {
+            top: -140px;
+            left: 1500px;
+            background-color:indigo;
+            position: relative;
+        }
+        .c10 {
+            top: -730px;
+            left: 600px;
+            background-color:thistle;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+
+    <main>
+            <input type="button", value="заново", onclick="findCircle()">
+        <div class="c1", id="circle1", onclick="hideCir1()">1</div>
+        <div class="c2", id="circle2", onclick="hideCir2()">2</div>
+        <div class="c3", id="circle3", onclick="hideCir3()">3</div>
+        <div class="c4", id="circle4", onclick="hideCir4()">4</div>
+        <div class="c5", id="circle5", onclick="hideCir5()">5</div>
+        <div class="c6", id="circle6", onclick="hideCir6()">6</div>
+        <div class="c7", id="circle7", onclick="hideCir7()">7</div>
+        <div class="c8", id="circle8", onclick="hideCir8()">8</div>
+        <div class="c9", id="circle9", onclick="hideCir9()">9</div>
+        <div class="c10",id="circle10", onclick="hideCir10()">10</div>
+    </main>
+
+    <footer>
+        &copy; Красов Павел, ФБИ-23, 2 курс, 2024
+    </footer>
+</body>
+</html>
