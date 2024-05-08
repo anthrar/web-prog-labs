@@ -65,18 +65,29 @@ a:active {
 .game {
     border: 1px solid;
     width: 500px;
-    border-radius: 3px;
-    margin: 5px auto;
+    border-radius: 10px;
+    margin: 15px auto;
     padding: auto;
     text-align: center;
 }
+.help {
+    color: magenta;
 
+    border: 1px solid;
+    background-color: cornsilk;
+    text-align: left;
+    width: 800px;
+    border-radius: 10px;
+    margin: 20px auto;
+    padding: auto;
+
+}
 div {
     margin: 60px;
     border: 1px solid; 
     padding: 7px; 
     width: 250px;
-    height: 200px;
+    height: 250px;
     overflow: auto;
 }
 
@@ -97,6 +108,7 @@ div2 {
     height: 50px;
     overflow: auto;
 }
+
 
 div.menu {
     border: 7px solid #00880080;

@@ -56,7 +56,17 @@
             currentScreen = 2;
             startGame();
         }
-    </script>
+        function showRules() {
+            let screens = document.getElementsByClassName('help');
+            screens[0].style.display = 'none';
+            screens[1].style.display = 'block';
+        }
+        function hideRules() {
+            let screens = document.getElementsByClassName('help');
+            screens[1].style.display = 'none';
+            screens[0].style.display = 'block';
+        }
+       </script>
 </head>
 <body>
     <header>
@@ -70,7 +80,7 @@
             </button>
         </div>
 
-        <div class="game", style="display: none;">
+        <div class="game" style="display: none;">
             <h1>Угадай число!</h1>
             <div.div1>
                 Задумано число от 1 до 100. Сможешь угадать какое?<br>
@@ -80,7 +90,7 @@
             </div.div1>
         </div>
 
-        <div class="game", style="display: none;">
+        <div class="game" style="display: none;">
             <h1>Поздравляю, вы выиграли</h1>
             <div.div1>
                 Задуманное число: <span id="number"></span>
@@ -91,6 +101,24 @@
             <div.div1>
                 <button onclick="again()">Сыграть ещё раз</button>
             </div.div1>
+        </div>
+        
+        <div class="help" style="height: 40px;">
+            <button onclick="showRules()">Показать правила игры</button>
+
+        </div>
+
+        <div class="help" style="display: none;">
+            <button onclick="hideRules()">Скрыть правила игры</button>
+            <ol type="a">
+                <li>Сначала нажимаем кнопку сыграть в игру</li>
+                <li>Затем вводим число и нажимаем кнопку "Угадать"</li>
+                <li>Если введённое число больше загадонного, программа опещает об этом и даёт попробовать ещё раз. Аналогично и с меньшим</li>
+                <li>При попытке угадать, не вводя число, программа откажется работать</li>
+                <li>Если вы попытаетесь ввести число больше 100 или меньше 1, то программа откажетсмя работать</li>
+                <li>После отгадывания числа, программа сообщит, что вы верно отгадали и выведет вам число попыток</li>
+                <li>Если вы захотите попробовать снова, нажмиет кнопку "Сыграть снова"</li>
+            </ol>
         </div>
     </main>
 
