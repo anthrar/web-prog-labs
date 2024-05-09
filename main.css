@@ -86,8 +86,8 @@ div {
     margin: 60px;
     border: 1px solid; 
     padding: 7px; 
-    width: 250px;
-    height: 250px;
+    width: 800px;
+    height: 600px;
     overflow: auto;
     transition: 2s;
 }
