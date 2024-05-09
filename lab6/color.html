@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Красов Павел. Перебор цветов</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon-16X16.png">
+    <link rel="shortcut icon" href="favicon-32x32.png">
+    <script>
+        function changeColor(div) {
+        
+            if(div.style.backgroundColor == 'yellow') {
+                div.style.backgroundColor = 'red';
+                document.getElementById('color-name').innerHTML = 'красный';
+                div.style.color = 'white';
+            }
+            else if(div.style.backgroundColor == 'red') {
+                div.style.backgroundColor = 'black';
+                document.getElementById('color-name').innerHTML = 'чёрный';
+                div.style.color = 'white';
+            } 
+            else if(div.style.backgroundColor == 'black') {
+                div.style.backgroundColor = 'green';
+                document.getElementById('color-name').innerHTML = 'зеленый';
+                div.style.color = 'blue';
+            }
+            else if(div.style.backgroundColor == 'green') {
+                div.style.backgroundColor = 'blue';
+                document.getElementById('color-name').innerHTML = 'синий';
+                div.style.color = 'yellow';
+            }
+            else if(div.style.backgroundColor == 'blue') {
+                div.style.backgroundColor = 'brown';
+                document.getElementById('color-name').innerHTML = 'коричневый';
+                div.style.color = 'white';
+            }
+            else {
+                div.style.backgroundColor = 'yellow';
+                document.getElementById('color-name').innerHTML = 'жёлтый';
+                div.style.color = 'black';
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+
+    <main>
+        <div class="color" ondblclick="changeColor(this)" style="cursor: pointer;background-color: yellow; color:blue">
+            Цвет: <span id="color-name">жёлтый</span><br>
+            Сделайте двойной щелчок, чтобы сменить цвет
+        </div>
+    </main>
+
+    <footer>
+        &copy; Красов Павел, ФБИ-23, 2 курс, 2024
+    </footer>
+</body>
+</html>

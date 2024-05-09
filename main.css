@@ -89,6 +89,7 @@ div {
     width: 250px;
     height: 250px;
     overflow: auto;
+    transition: 2s;
 }
 
 div1 {
