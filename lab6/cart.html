@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Красов Павел. Корзина товаров</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon-16X16.png">
+    <link rel="shortcut icon" href="favicon-32x32.png">
+    <script>
+        function checkNegative(value, name){
+            if (value < 0) {
+                return name + ' не может быть отрицательным ' + '<br>'
+            }
+            else {
+                return ''
+            }
+        }
+        function Cost(value, price) {
+            if(isNaN(value)) {
+                return 0;
+            }
+            else {
+                return value*price;
+            }
+        }
+        function showSum() {
+            let resultMessage = '';
+            let result = 0;
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+            let inputC = document.getElementById('numberC');
+            let inputD = document.getElementById('numberD');
+            let inputE = document.getElementById('numberE');
+            let inputF = document.getElementById('numberF');
+            let inputG = document.getElementById('numberG');
+            let a = parseInt(inputA.value);
+            resultMessage += checkNegative(a, 'Банан');
+            result += Cost(a,90);
+            let b = parseInt(inputB.value);
+            resultMessage += checkNegative(b, 'Молоко');
+            result += Cost(b,120);
+            let c = parseInt(inputC.value);
+            resultMessage += checkNegative(c, 'Молочный шоколад');
+            result += Cost(c,80);
+            let d = parseInt(inputD.value);
+            resultMessage += checkNegative(d, 'Хлеб белый');
+            result += Cost(d,50);
+            let e = parseInt(inputE.value);
+            resultMessage += checkNegative(e, 'Мохито');
+            result += Cost(e,70);
+            let f = parseInt(inputF.value);
+            resultMessage += checkNegative(f, 'Конфеты');
+            result += Cost(f,100);
+            let g = parseInt(inputG.value);
+            resultMessage += checkNegative(g, 'Крабовые палочки');
+            result += Cost(g,150);
+            if(result==0) {
+                resultMessage = 'Нужно выбрать хотя бы один товар';
+            } 
+            
+            let inputBalance = document.getElementById('balance');
+            let totalMessage = document.getElementById('total');
+            let bal = parseInt(inputBalance.value);
+            resultMessage += checkNegative(bal, 'Входной баланс');
+            if (isNaN(bal)) {
+                resultMessage = 'Баланс не может быть пустым';
+            }
+
+            if (resultMessage != '') {
+                resultMessage = 'Ошибка: ' + '<br>' + resultMessage;
+            }
+            else {
+                resultMessage += 'Итого: ' + result + '<br>' ;
+                if(result>bal) {
+                    resultMessage += 'У вас недостаточно средств'
+                }
+                else {
+                    resultMessage += 'Оформление корзины прошло успешно'
+                }
+            }
+            totalMessage.innerHTML= resultMessage;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+    
+    <main>
+        <div>
+            <label>Мой баланс:</label>
+            <input type="number" min="0" placeholder="" id="balance"><br>
+            <h1>Корзина товаров</h1><br>
+            <table border="1" width="100%">
+                <tr>
+                    <td>Название</td>
+                    <td>Цена</td>
+                    <td>Количество</td>
+                </tr>
+                <tr>
+                    <td>Банан</td>
+                    <td>90 р</td>
+                    <td><input type="number" min="0" placeholder="Введите число" value="" id="numberA"></td>
+                </tr>
+                    
+                <tr>
+                    <td>Молоко</td>
+                    <td>120 р</td>
+                    <td><input type="number" min="0" placeholder="Введите число" value="" id="numberB"></td>
+                </tr>
+                    
+                <tr>
+                    <td>Молочный шоколад</td>
+                    <td>80 р</td>
+                    <td><input type="number" min="0" placeholder="Введите число" value="" id="numberC"></td>
+                </tr>
+
+                <tr>
+                    <td>Хлеб белый</td>
+                    <td>50 р</td>
+                    <td><input type="number" min="0" placeholder="Введите число" value="" id="numberD"></td>
+                </tr>
+                    
+                <tr>
+                    <td>Мохито</td>
+                    <td>70 р</td>
+                    <td><input type="number" min="0" placeholder="Введите число" value="" id="numberE"></td>
+                </tr>
+                
+                <tr>
+                    <td>Конфеты</td>
+                    <td>100 р</td>
+                    <td><input type="number" min="0" placeholder="Введите число" value="" id="numberF"></td>
+                </tr>
+                    
+                <tr>
+                    <td>Крабовые палочки</td>
+                    <td>150 р</td>
+                    <td><input type="number" min="0" placeholder="Введите число" value="" id="numberG"></td>
+                </tr>
+            </table>
+        
+
+            <button onclick="showSum()">Ок</button>
+            <div id="total" style="width: 500px; height: 150px;">
+            </div>
+        </div>
+        
+    </main>
+
+    <footer>
+        &copy; Красов Павел, ФБИ-23, 2 курс, 2024
+    </footer>
+</body>
+</html>
