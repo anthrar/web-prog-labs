@@ -3,11 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Красов ПАвел. Лабораторная работа №7</title>
+    <title>Красов Павел. Добавление блоков</title>
     <link rel="stylesheet" href="../main.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon-16X16.png">
     <link rel="shortcut icon" href="favicon-32x32.png">
+    <script>
+        function addNewBlock() {
+            let newBlock = document.getElementById('div');
+            newBlock.style.background = 'green';
+            newBlock.style.height = '20px';
+            newBlock.style.width = '70px';
+            newBlock.style.borderColor = 'yellow';
+            newBlock.style.margin = '15px';
+
+            document.querySelector('main').appendChild(newBlock);
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -15,11 +27,7 @@
     </header>
 
     <main>
-        <ol>
-            <li>
-                <a href="lab7/bloks.html">Добавление блоков</a>
-            </li>
-        </ol>
+        <button onclick="addNewBlock()">Добавить блок</button>
     </main>
 
     <footer>
