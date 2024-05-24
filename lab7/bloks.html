@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="favicon-32x32.png">
     <script>
         function addNewBlock() {
-            let newBlock = document.getElementById('div');
+            let newBlock = document.createElement('div');
             newBlock.style.background = 'green';
             newBlock.style.height = '20px';
             newBlock.style.width = '70px';
@@ -18,6 +18,33 @@
             newBlock.style.margin = '15px';
 
             document.querySelector('main').appendChild(newBlock);
+        }
+        function addNewBlocks() {
+            let blockNumber = enterNumber();
+            let main = document.querySelector('main');
+            for(let i=0; i<blockNumber; i++) {
+                let newBlock = document.createElement('div');
+                newBlock.style.background = 'green';
+                newBlock.style.height = '40px';
+                newBlock.style.borderColor = 'yellow';
+                newBlock.style.width = (100+i*20) + 'px';
+                newBlock.style.margin = '15px';
+                newBlock.innerHTML = `Блок № ${i+1}: 2*${i}<sup>2</sup> = ${2*i**2}`;
+
+                main.appendChild(newBlock);
+            }
+            
+        }
+        function enterNumber() {
+            let enumber = document.getElementById('inpNumb');
+            let value = parseInt(enumber.value);
+            if(value<0) {
+                alert('Число блоков не может быть отрицательным!');
+                return 0;
+            }
+            else {
+                return value
+            }
         }
     </script>
 </head>
@@ -27,7 +54,9 @@
     </header>
 
     <main>
+        <input type="number" min="0" placeholder="" id="inpNumb"><br>
         <button onclick="addNewBlock()">Добавить блок</button>
+        <button onclick="addNewBlocks()">Добавить блоки</button>
     </main>
 
     <footer>
