@@ -46,6 +46,20 @@
                 return value
             }
         }
+        function add20_50() {
+            let main = document.querySelector('main');
+            for(let i=20; i<=50; i+=2.5) {
+                let newBlock = document.createElement('div');
+                newBlock.style.width = '40px';
+                newBlock.style.height = '60px';
+                newBlock.style.border = '1px solid';
+                newBlock.innerHTML = `${i}`;
+                main.appendChild(newBlock);
+                newBlock.style.background = 'red';
+                newBlock.style.borderColor = 'black';
+                newBlock.style.margin = '15px';
+        }
+    }
     </script>
 </head>
 <body>
@@ -57,6 +71,7 @@
         <input type="number" min="0" placeholder="" id="inpNumb"><br>
         <button onclick="addNewBlock()">Добавить блок</button>
         <button onclick="addNewBlocks()">Добавить блоки</button>
+        <button onclick="add20_50()">20 => 50</button>
     </main>
 
     <footer>
