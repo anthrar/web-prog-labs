@@ -92,6 +92,37 @@
                 main.appendChild(newBlock);
             }
     }
+        function addColorCircles() {
+            let main = document.querySelector('main');
+            let circle = GetCircle();
+            for(let i = circle; i>0; i--) {
+                let newBlock = document.createElement('div');
+                newBlock.style.display = 'inline-block';
+                newBlock.style.borderRadius = '50%';
+                newBlock.textContent = i;
+                newBlock.style.width = '30px';
+                newBlock.style.height = '30px';
+                newBlock.style.margin = '5px';
+                if(i%2==0) {
+                    newBlock.style.backgroundColor = 'blue';
+                }
+                else {
+                    newBlock.style.backgroundColor = 'yellow';
+                }
+                main.appendChild(newBlock);
+            }
+        }
+        function GetCircle() {
+            let enumber = document.getElementById('newCircles');
+            let value = parseInt(enumber.value);
+            if(value<0) {
+                alert('Число кругов не может быть отрицательным!');
+                return 0;
+            }
+            else {
+                return value
+            }
+        }
     </script>
 </head>
 <body>
@@ -106,6 +137,9 @@
         <button onclick="add20_50()">20 => 50</button>
         <button onclick="add10_80()">10 => -80</button>
         <button onclick="addOpacity_Blocks()">Полупрозрачные блоки</button>
+        <input placeholder="" type="number" id="newCircles">
+        <button onclick="addColorCircles()">Жёлтые и синие круги</button>
+        <br>
     </main>
 
     <footer>
