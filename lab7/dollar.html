@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Красов Павел. Добавление блоков</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon-16X16.png">
+    <link rel="shortcut icon" href="favicon-32x32.png">
+    <script>
+        function showExchange() {
+            const exchange = [
+                89.7026, 90.2486, 90.1887, 90.4082, 90.6537, 90.9873, 90.9239, 
+                91.2573, 91.3591, 91.6330
+            ];
+            let table = document.getElementById('dollar-table');
+            for(let i=0; i<exchange.length; i++) {
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.innerText = exchange[i];
+                tr.appendChild(td);
+                table.appendChild(tr);
+            }
+
+            let sum=0;
+            for(let i=0; i<exchange.length; i++) {
+                sum +=exchange[i];
+            }
+            let average = sum/exchange.length;
+            average.toFixed(2);
+            let detailDiv = document.getElementById('detail');
+            detailDiv.innerText = `Среднее значение: ${average}`;
+            let button = document.getElementById('show-button');
+            button.style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+    <main>
+        <button onclick="showExchange()">Курс доллара</button>
+        <table border="1" id="dollar-table"></table>
+        <div id="detail" style="width: 160px; height: 80px;"></div>
+    </main>
+
+    <footer>
+        &copy; Красов Павел, ФБИ-23, 2 курс, 2024
+    </footer>
+</body>
+</html>
