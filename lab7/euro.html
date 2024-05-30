@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Красов Павел. Добавление блоков</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon-16X16.png">
+    <link rel="shortcut icon" href="favicon-32x32.png">
+    <script>
+        function getEuroExchangeRate() {
+            const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
+            fetch(url)
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(json) {
+                let dateDiv = document.getElementById('date');
+                let curdate = new Date(json.Date);
+                dateDiv.innerText = curdate.toDateString();
+
+                let prevdateDiv = document.getElementById('prevdate');
+                let prevdate = new Date(json.PreviousDate);
+                prevdateDiv.innerText = prevdate.toDateString();
+
+                let courseDiv = document.getElementById('course');
+                courseDiv.innerText = json.Valute.EUR.Value;
+
+                fetch( "https:" + json.PreviousURL )
+                .then( function(response){
+                    return response.json();
+                } )
+                .then( function(json){
+                    let prevcourseDiv = document.getElementById('prevcourse');
+                    prevcourseDiv.innerText = json.Valute.EUR.Value;
+
+                    let prevcourseVal = parseFloat(json.Valute.EUR.Value);
+                    let courseVal = parseFloat( document.getElementById('course').innerText);
+                    let diffVal = (courseVal - prevcourseVal).toFixed(4);
+                    let message = '';
+                    let diffValstr = diffVal.toString();
+                    if( diffVal > 0){
+                        message  = "Курс вырос на " + diffValstr;
+                    } 
+                    else if (diffVal < 0) {
+                        message  = "Курс упал на " + diffValstr;                   
+                    } 
+                    else {
+                        message  = "Курс не изменился";
+                    }
+                    let messageDiv = document.getElementById('message');
+                    messageDiv.innerText = message.toString();
+                });
+
+                document.getElementById('showPanel').style.display = 'block';
+            });
+
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+    <main>
+        <a href="https://www.cbr-xml-daily.ru/">Курсы валют, API</a>
+        <BR>
+        <button onclick="getEuroExchangeRate()">Курс евро</button>
+        <BR>
+        <div style="width: 500px;height: 200px; display: none; color: black;" id="showPanel">Текущий курс евро на дату
+            <span id="date" style="width: 100px;height: 50px; color: blueviolet;"></span> равен
+            <span id="course" style="width: 100px;height: 50px; color: darkblue;"></span>
+            <br>
+            Предыдущий курс был на дату 
+            <span id="prevdate" style="width: 100px;height: 50px; color:darkmagenta;"></span> и равен 
+            <span id="prevcourse" style="width: 100px;height: 50px; color: darkgreen;"></span>
+            <span id="message"></span>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Красов Павел, ФБИ-23, 2 курс, 2024
+    </footer>
+</body>
+</html>
