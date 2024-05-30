@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Красов Павел. Добавление блоков</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon-16X16.png">
+    <link rel="shortcut icon" href="favicon-32x32.png">
+    <script>
+        function EnelCourse() {
+            const dates =[
+                "28.05.2024", "27.05.2024", "24.05.2024", "23.05.2024", "22.05.2024",
+                "21.05.2024", "20.05.2024", "17.05.2024", "16.05.2024"
+            ];
+            const prices =[
+                0.5904, 0.5842, 0.6040, 0.6102, 0.6110, 0.6106, 0.6202, 0.6204, 0.6246
+            ];
+            let table = document.getElementById('Eneltable');
+            let sum =0;
+            let min = prices[0];
+            let max = prices[0];
+            for(let i=0; i< prices.length; i++) {
+                let tr = document.createElement('tr');
+                let date = document.createElement('td');
+                date.innerText = dates[i];
+                tr.appendChild(date);
+
+                let price = document.createElement('td');
+                price.innerText = prices[i];
+                tr.appendChild(price);
+                
+                let diff = document.createElement('td');
+                if(i==0) {
+                    diff.innerText = "-";
+                }
+                else {
+                    let diffvalue = prices[i] - prices[i-1];
+                    
+                    diff.innerText = diffvalue.toFixed(4).toString();
+                }
+
+                
+                tr.appendChild(diff);
+
+                
+                table.appendChild(tr);
+                
+                sum +=prices[i];
+                min = Math.min(min, prices[i]);
+                max = Math.max(max, prices[i]);
+            }
+            let average = sum/prices.length;
+            average = average.toFixed(2);
+            let detailD = document.getElementById('detail');
+            detailD.innerText = `Среднее значение: ${average}\nМинимальное значение: ${min}\nМаксимальное значение: ${max}`;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+    <main>
+        <button onclick="EnelCourse()">Курс акций Enel</button>
+        <table border="1" id="Eneltable">
+            <tr>
+                <th>Дата</th>
+                <th>Цена акций</th>
+                <th>Разница</th>
+            </tr>
+        </table>
+        <div id="detail"></div>
+    </main>
+
+    <footer>
+        &copy; Красов Павел, ФБИ-23, 2 курс, 2024
+    </footer>
+</body>
+</html>
