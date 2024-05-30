@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Красов Павел. Добавление блоков</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon-16X16.png">
+    <link rel="shortcut icon" href="favicon-32x32.png">
+    <script>
+        function showWeather() {
+            const url ="https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezone=Asia%2FBangkok"
+            fetch(url)
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(json) {
+                const hourlyTemperature = json.hourly.temperature_2m;
+                const today = new Date();
+                const todayTime = today.getHours() + today.getMinutes()/60;
+                const MorningTemperature = hourlyTemperature[8];
+                const SunTemperature = hourlyTemperature[12];
+                const EveningTemperature = hourlyTemperature[20];
+                let eightDiv = document.getElementById('eight');
+                let twelveDiv = document.getElementById('twelve');
+                let twentyDiv = document.getElementById('twenty');
+                eightDiv.innerText = MorningTemperature;
+                twelveDiv.innerText = SunTemperature;
+                twentyDiv.innerText = EveningTemperature;
+            })
+            document.getElementById('showPanel').style.display = 'block';
+        }
+        
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+    <main style="text-align: left;">
+        
+        <button onclick="showWeather()" style="width: 400px; height: 200px;">Прогноз погоды</button>
+        <div style="width: 300px;height: 100px; display: none; color: black;" id="showPanel">Температура на сегодняшнюю дату: <br>
+            Температура в 8 часов равна
+            <span id="eight" style="width: 100px;height: 50px; color:goldenrod;"></span> <br>
+            Температура в 12 часов равна
+            <span id="twelve" style="width: 100px;height: 50px; color: darkblue;"></span> <br>
+            Температура в 20 часов равна
+            <span id="twenty" style="width: 100px;height: 50px; color:darkviolet;"></span> 
+        </div>
+        
+    </main>
+
+    <footer>
+        &copy; Красов Павел, ФБИ-23, 2 курс, 2024
+    </footer>
+</body>
+</html>
