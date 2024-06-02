@@ -31,4 +31,14 @@ function showDate() {
     let dayOfWeekOut = document.getElementById('day-of-week');
     dayOfWeekOut.innerText = dayOfWeek;
     
+
+}
+function showDayOfWeek() {
+    let year = document.getElementById('year').value;
+    let month = document.getElementById('month').value;
+    let day = document.getElementById('day').value;
+    let date = new Date(year, month-1, day);
+    let dayOfWeekName = weekDays[date.getDay()];
+    let dayOfWeekNameOut = document.getElementById('day-of-week-name');
+    dayOfWeekNameOut.innerText = dayOfWeekName;
 }
