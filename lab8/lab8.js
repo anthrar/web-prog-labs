@@ -1,22 +1,34 @@
+
+const weekDays = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
+const nameMonths = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
+
 function showDate() {
-    let out = document.getElementById('current-date');
     let today = new Date();
+    let out = document.getElementById('current-date');
     out.innerText = today.toLocaleString('ru-RU');
     let outE = document.getElementById('egypt-date');
-    let egypttoday = new Date();
     outE.innerText = today.toLocaleString('ar-EG');
     let Catalanout = document.getElementById('Catalan-date');
-    let Catalantoday = new Date(); 
     Catalanout.innerText = today.toLocaleString('ca');
     let Canadaout = document.getElementById('Canada-date');
-    let Canadatoday = new Date(); 
     Canadaout.innerText = today.toLocaleString('en-CA');
     let Frenchout = document.getElementById('French-date');
-    let Frenchtoday = new Date(); 
     Frenchout.innerText = today.toLocaleString('fr');
     let Japaneseout = document.getElementById('Japanese-date');
-    let Japanesetoday = new Date();
     Japaneseout.innerText = today.toLocaleString('ja');
+
+    let day = new Date(); 
+    let YearNow = day.getFullYear();
     let CurrentYear = document.getElementById('current-year');
-    let YearNow = getFullYear();
+    CurrentYear.innerText = YearNow;
+    let MonthNow = nameMonths[day.getMonth()];
+    let CurrentMonth = document.getElementById('current-month');
+    CurrentMonth.innerText = MonthNow;
+    let DayNow = day.getDate();
+    let CurrentDay = document.getElementById('current-day');
+    CurrentDay.innerText = DayNow;
+    let dayOfWeek = weekDays[day.getDay()]; 
+    let dayOfWeekOut = document.getElementById('day-of-week');
+    dayOfWeekOut.innerText = dayOfWeek;
+    
 }
