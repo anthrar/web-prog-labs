@@ -4,6 +4,8 @@ function showTime(){
     time.innerText = today.toLocaleTimeString('ru-RU');
     let bigtime = document.getElementById('bigtime');
     bigtime.innerText = today.toLocaleTimeString('ru-RU');
-   // setTimeout(showTime, 1000);
+
+    let secondsDiv = document.getElementById('seconds');
+    secondsDiv.style.transform = "rotate( " + today.getSeconds() * 6 + "deg) translate(0, -80px)";
 }
 setInterval(showTime, 1000);
