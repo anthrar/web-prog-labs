@@ -8,21 +8,25 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon-16X16.png">
     <link rel="shortcut icon" href="favicon-32x32.png">
+    <script src="get-days-count.js"></script>
 </head>
-<body>
+<body onload="showDate()">
     <header>
         НГТУ, ФБ, Лабораторная работа 8
     </header>
 
-    <main style=" text-align: left;">
-        <ol>
-            <li>
-                <a href="data.html">Дата</a>
-            </li>
-            <li>
-                <a href="get-days-count.html">Число дней с даты рождения</a>
-            </li>
-        </ol>
+    <main>
+        <h1>Число дней с даты рождения</h1>
+        <div style="border: none;">
+            <label>Дата рождения: <input type="date"></label> <br><br>
+            <input type="button" value="Показать число дней" onclick="showDateCount()">  
+            <input type="button" value="Очистить" onclick="clearAll()">
+            <p>
+                Количество дней с дня рождения:  <span id="count-days"></span>
+            </p>
+
+            <span> 
+        </div>
     </main>
 
     <footer>
@@ -30,4 +34,3 @@
     </footer>
 </body>
 </html>
-

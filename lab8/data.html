@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Лабораторная работа 8, Дата</title>
     <link rel="stylesheet" href="../main.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon-16X16.png">
@@ -12,10 +12,11 @@
 </head>
 <body onload="showDate()">
     <header>
-        НГТУ, ФБ, Лабораторная работа 7
+        НГТУ, ФБ, Лабораторная работа 8
     </header>
 
     <main>
+        <h1>Дата</h1>
         <div style="width: 500px; height: 200px; text-align: left;">
             Дата и время для русской локали:
             <span id="current-date" style="width: 300px; height: 200px; color: darkblue; font-size: 14px;"></span> <br>
@@ -42,13 +43,13 @@
             <span id="day-of-week"></span> <br>
 
         </div>
-        <div style="width: 300px; height: 150px; text-align: left;">
-            введите год:
-            <input type="text"  id="year"> <br>
-            введите месяц:
-            <input type="text"  id="month"> <br>
-            введите дату:
-            <input type="text" id="day"> <br><br>
+        <div style="width: 400px; height: 200px; text-align: left;">
+            <label>введите год:
+            <input type="text"  id="year"></label> <br>
+            <label>введите месяц:
+            <input type="text"  id="month"></label> <br>
+            <label>введите дату:
+            <input type="text" id="day"></label> <br><br>
                 <input type="button" value="Показать день недели" onclick="showDayOfWeek()"> 
             <p>
             День недели:
